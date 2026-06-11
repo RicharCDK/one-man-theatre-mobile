@@ -1,0 +1,123 @@
+@use 'variables.scss' as *;
+.header {
+  background-color: black;
+  color: white;
+  padding: 15px 0;
+  position: relative;
+  z-index: 100;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__burger {
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    z-index: 101;
+    display: block;
+    // > 576 = сховати кнопку меню
+    @media (min-width: $bp-sm) {
+      display: none;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    @media (min-width: $bp-sm) {
+      width: auto;
+      text-align: left;
+    }
+  }
+
+  &__nav { // <576px 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;    
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+
+    a {
+      color: white;
+      font-size: 14px;
+      text-transform: uppercase;
+      padding: 15px 20px;
+      border-top: 1px solid #333;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $color-placeholder;
+      }
+    }
+
+    // > 576px 
+    @media (min-width: $bp-sm) {
+      position: static;
+      max-height: none;
+      overflow: visible;
+      flex-direction: row;
+      background-color: transparent;
+      width: auto;
+      gap: 30px;
+
+      a {
+        padding: 0;
+        border-top: none;
+      }
+    }
+  }
+
+  // Шукаємо сусідній .header__nav після кліку по чекбоксу
+  &__checkbox:checked ~ &__nav {
+    // Якщо < 575 робимо випадаючим списком
+    @media (max-width: ($bp-sm - 1px)) {
+      max-height: 250px;
+      border-top: 1px solid #333;
+    }
+  }
+}
+
+.footer {
+  background-color: $color-footer;
+  color: white;
+  padding: 30px 20px;
+  
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__info {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  &__brand {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .social-icon {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+  }
+}

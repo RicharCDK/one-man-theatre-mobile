@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Афіша</title>
+  <meta name="description" content="Розклад вистав та можливість придбати квитки у Театрі одного актора.">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <input type="checkbox" id="menu-toggle" class="header__checkbox" hidden>      
+      <label for="menu-toggle" class="header__burger"><img src="img/nav_btn.svg" alt="Menu"></label>
+      <div class="header__title">АФІША</div>
+      <nav class="header__nav">
+        <a href="index.html">Головна</a>
+        <a href="about.html">Про театр</a>
+        <a href="schedule.html">Афіша</a>
+      </nav>
+    </div>
+  </header> 
+  
+  <main class="schedule container">
+    <div class="schedule__month-nav">
+      <button type="button" id="prevMonth">&lsaquo; Травень</button>
+      <span class="current">ЧЕРВЕНЬ</span>
+      <button type="button" id="nextMonth">Липень &rsaquo;</button>
+    </div>
+
+    <form action="#" method="GET" class="schedule__filters" id="filtersForm">
+      <input type="search" id="searchInput" placeholder="Пошук...">
+
+      <select id="stageSelect">
+        <option value="all">Сцени</option>
+        <option value="main">Головна</option>
+        <option value="small">Мала</option>
+      </select>
+
+      <select id="genreSelect">
+        <option value="all">Жанри</option>
+        <option value="drama">Драма</option>
+        <option value="comedy">Комедія</option>
+      </select>      
+
+      <input type="date" id="dateInput">
+      <button type="reset" class="btn-reset" title="Скинути фільтри">&#10005;</button>
+    </form>
+    <img src="img/filter_line.svg" alt="Розділювач" class="schedule__separator">
+
+    <div class="schedule__grid" id="cardsContainer">
+      
+      <article class="card" data-stage="main" data-genre="drama" data-date="2026-06-01">
+        <div class="card__image"><img src="img/schedule.jpg" alt="Гамлет"></div>
+        <h3 class="card__title">Гамлет. Сповідь</h3>
+        <div class="card__info">
+          <span class="card__duration">Тривалість: 150 хв</span>
+          <span class="card__date">01.06.2026</span>
+        </div>
+        <button class="btn-ticket">Квитки</button>
+      </article>
+
+      <article class="card" data-stage="small" data-genre="drama" data-date="2026-06-15">
+        <div class="card__image"><img src="img/schedule.jpg" alt="Тіні забутих предків"></div>
+        <h3 class="card__title">Тіні забутих предків</h3>
+        <div class="card__info">
+          <span class="card__duration">Тривалість: 120 хв</span>
+          <span class="card__date">15.06.2026</span>
+        </div>
+        <button class="btn-ticket">Квитки</button>
+      </article>
+
+      <article class="card" data-stage="main" data-genre="comedy" data-date="2026-06-18">
+        <div class="card__image"><img src="img/schedule_b.png" alt="Записки божевільного"></div>
+        <h3 class="card__title">Записки божевільного</h3>
+        <div class="card__info">
+          <span class="card__duration">Тривалість: 90 хв</span>
+          <span class="card__date">18.06.2026</span>
+        </div>
+        <button class="btn-ticket">Квитки</button>
+      </article>
+
+      <article class="card" data-stage="small" data-genre="drama" data-date="2026-06-21">
+        <div class="card__image"><img src="img/schedule.jpg" alt="Портрет Доріана Грея"></div>
+        <h3 class="card__title">Портрет Доріана Грея</h3>
+        <div class="card__info">
+          <span class="card__duration">Тривалість: 180 хв</span>
+          <span class="card__date">21.06.2026</span>
+        </div>
+        <button class="btn-ticket">Квитки</button>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <div class="footer__info">
+          Години роботи: пн-пт 10:00-20:00<br>
+          Адреса: Одеса, вул. Софіївська, 1
+        </div>
+        <div class="footer__brand">Театр одного актора</div>
+      </div>
+      <div class="footer__socials">
+        <a href="#" class="social-icon"><img src="img/ig_logo.png" alt="Inst"></a>
+        <a href="#" class="social-icon"><img src="img/fb_logo.png" alt="FB"></a>
+        <a href="#" class="social-icon"><img src="img/yt_logo.png" alt="YT"></a>
+      </div>
+    </div>
+  </footer>
+<script src="js/schedule.js"></script>
+</body>
+</html>

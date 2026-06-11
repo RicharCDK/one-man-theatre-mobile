@@ -1,0 +1,66 @@
+@use 'variables' as *;
+@use 'header_footer' as *;
+@use 'index' as *;
+@use 'about' as *;
+@use 'schedule' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-main;
+  color: $color-text;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $color-bg-light;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  flex: 1;
+  padding-bottom: 40px;
+}
+
+.img-placeholder {
+  background-color: $color-placeholder;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__image img,
+.card__image img,
+.news-item img,
+.about__image img,
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+// Адаптив
+.container {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+
+  @media (min-width: $bp-sm) {
+    max-width: 540px;
+  }
+}
+
